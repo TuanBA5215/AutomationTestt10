@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 
 public class CT_Account {
 	
+	public static String TRIZEN_URL = "https://techydevs.com/demos/themes/html/trizen-demo/trizen/index.html";
 	public static String RISE_URL = "https://rise.fairsketch.com/signin";
 	public static By TEXT_EMAIL = By.id("email");
 	public static By TEXT_PASSWORD = By.id("password");
