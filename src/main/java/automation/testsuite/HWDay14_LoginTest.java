@@ -2,6 +2,7 @@ package automation.testsuite;
 
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
@@ -27,7 +28,7 @@ public class HWDay14_LoginTest extends CommonBase{
 		WebElement Signup = driver.findElement(By.xpath("//a[text()='Đăng Ký']"));
 		Signup.click();
 		HWDay14_LoginPage signin = new HWDay14_LoginPage(driver);
-		signin.SigninFunction("Anh Tuan","testauto5254@gmail.com","testauto5254@gmail.com","123456","123456","0917763289");
+		signin.SigninFunction("Anh Tuan","testauto5259@gmail.com","testauto5259@gmail.com","123456","123456","0917763289");
 		assertTrue(driver.findElement(HWDay14_Account.SIGN_IN_SUCCES).isDisplayed());
 		}
 	
@@ -36,15 +37,18 @@ public class HWDay14_LoginTest extends CommonBase{
 		WebElement Login = driver.findElement(By.xpath("//a[text()='Đăng Nhập']"));
 		Login.click();
 		HWDay14_LoginPage login = new HWDay14_LoginPage(driver);
-		login.LoginFunction("testauto5254@gmail.com", "123456");
+		login.LoginFunction("testauto5259@gmail.com", "1234567");
 		WebElement Login1 = driver.findElement(By.xpath("//button[@type='submit']"));
 		Login1.click();
 		WebElement Change1 = driver.findElement(By.xpath("//i[@class='fa fa-caret-down']"));
 		Change1.click();
 		HWDay14_LoginPage change = new HWDay14_LoginPage(driver);
-		change.ChangePWFunction("123456","1234567","1234567");
+		change.ChangePWFunction("1234567","12345678","12345678");
 		WebElement changepw = driver.findElement(By.xpath("//button[text()='Lưu mật khẩu mới']"));
 		changepw.click();
+		String actualText = driver.switchTo().alert().getText();
+		assertEquals(actualText, "Cập nhật mật khẩu mới thành công!");
+		driver.switchTo().alert().accept();
 	}
 	
 	@Test(priority = 3)
@@ -52,7 +56,7 @@ public class HWDay14_LoginTest extends CommonBase{
 		WebElement Login = driver.findElement(By.xpath("//a[text()='Đăng Nhập']"));
 		Login.click();
 		HWDay14_LoginPage login = new HWDay14_LoginPage(driver);
-		login.LoginFunction("testauto5254@gmail.com", "1234567");
+		login.LoginFunction("testauto5259@gmail.com", "1234567");
 		WebElement Login1 = driver.findElement(By.xpath("//button[@type='submit']"));
 		Login1.click();
 		assertTrue(driver.findElement(HWDay14_Account.SIGN_IN_SUCCES).isDisplayed());

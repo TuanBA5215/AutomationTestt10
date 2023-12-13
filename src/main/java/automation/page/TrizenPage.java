@@ -16,7 +16,7 @@ public class TrizenPage {
 	@FindBy(xpath="(//label[text()='Passengers'])[1]/following-sibling::div/div")
 	WebElement dropboxPassenger;
 	
-	@FindBy(xpath = "(//label[text()='Adults'])[1]/following-sibling::div//i[@class='la la-plus']")
+	@FindBy(xpath = "(//div[@class='qtyInc'])[1]/descendant::I")
 	WebElement addAdult;
 
 	public TrizenPage(WebDriver driverCommonBase) {

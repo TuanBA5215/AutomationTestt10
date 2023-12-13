@@ -8,6 +8,7 @@ import automation.constant.CT_Account;
 import automation.page.TrizenPage;
 
 public class TrizenTest extends CommonBase {
+	
 	@BeforeMethod
 	public void openChrome() {
 		driver = initChromeDriver(CT_Account.TRIZEN_URL);

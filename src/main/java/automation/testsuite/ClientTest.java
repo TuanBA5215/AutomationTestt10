@@ -2,6 +2,8 @@ package automation.testsuite;
 
 import static org.testng.Assert.assertTrue;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.testng.annotations.*;
 
@@ -27,7 +29,8 @@ public class ClientTest extends CommonBase{
 		client.AddClientFunction("Demo company", "Sara Ann");
 		//Assert Tuan's company visible
 		//assertTrue(driver.findElement(By.xpath("//a[text()='Demo company']")).isDisplayed());
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
 		isElementPresent(By.xpath("//a[text()='Demo company']"));
 	
 	}
